@@ -1,0 +1,338 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;   /* #important  concept */
+}
+html , body{
+   
+font-family: 'Poppins', sans-serif;
+/* font-weight: 300; */
+line-height: 1.4;
+scroll-behavior: smooth;
+color: white;
+
+
+}
+
+body
+{
+      font-size: 1.4rem;
+}
+
+:root{
+    --light-color: #0089b7;
+    --dark_color: #003d62;
+    --darker_color :#003251;
+    --secondary_color : #fff700;
+}
+
+/* starting with css for header or nav section */
+.container
+{
+   max-width: 1300px;
+   margin: 0 auto;
+  
+}
+a
+{
+    text-decoration: none;
+    color: white;
+
+}
+header{
+    background-color: var(--light-color);
+}
+ul{
+    list-style: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     padding: 1rem;
+}
+
+nav ul{
+    display: flex;
+    gap: 2rem;
+}
+nav li{
+    font-size: 1.8rem;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s ease-in-out;
+}
+nav li:hover
+{
+    border-bottom: 2px solid var(--secondary_color);
+    transition: 0.3s ease-in-out;
+}
+.logo
+{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+
+/* 12:48  */
+
+/* // start working on hero section  */
+
+#hero
+{
+ background-color: var(--dark_color);
+ padding: 4rem 0;
+ border-bottom: 4px solid var(--light-color);
+}
+
+#hero .container{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.hero_image img
+{
+   border-radius: 50%;
+}
+
+/* // to align text in center we are using grid  */
+.hero_content
+{
+    display: grid;
+    place-items: center;
+    
+}
+
+#hero h1
+{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+ .hi-text
+ {
+    font-size: 6rem;
+    font-weight: bold;
+    color: var(--secondary_color);
+ }
+
+ .name_text
+ {
+    font-size: 5rem;
+    
+ }
+
+ #hero h2
+{
+    font-size: 4rem;
+    font-weight: bold;
+
+ overflow: hidden;    /* ENSURE THE CONTENT IS NOT REVELED UNTIL THE ANIMATION */
+ border-right: 0.15em solid orange;  /* the typwriter cursor */
+  white-space: nowrap;  /*keep the content opn the single line  */
+   margin: 0 auto;   /*Gives that scrolling effect as the typing happens */
+   animation:  typing 5s steps(40, end) , blink-caret 0.75s step-end infinite;
+   
+} 
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 80% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+
+
+  /* project section  */
+
+
+  #project
+  {
+    background-color: var(--darker_color);
+    padding-bottom: 50px;
+  }
+
+  #project h2
+  {
+    font-size: 6rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .project_container
+  {
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(320px,1fr));
+    gap: 2rem;
+    
+  }
+
+  .grid_item
+  {
+    display: grid;
+    place-items: center;
+  }
+
+  .card
+  {
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+  }
+ .card:hover{
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+ }
+
+ .card:hover img{
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    opacity: 0.8;
+ }
+
+ .card_content
+ {
+    padding: 2rem;
+    position: relative;
+    top: -6rem;
+    margin-bottom: -6rem;
+    transition: 0.5s ease-in-out;
+    transform: translateY(100px);
+ }
+
+ .card:hover .card_content{
+    background-color: white;
+    color: var(--dark_color);
+    transform: translateY(0px);
+ }
+
+.card_content h3
+{
+   text-align: center;
+}
+
+
+
+/* CONTACT  SECTION */
+
+#contact
+{
+    background-color: var(--dark_color);
+}
+
+
+#contact h2
+{
+    font-size: 6rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#contact .container{
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.top_contact
+{
+     max-width: 800px;
+     display: grid;
+     grid-template-columns: repeat(auto-fit , minmax(80px,1fr));
+     margin: 0 auto;
+}
+
+
+.contact_way
+{
+    display: flex;
+    gap: 1rem;
+    align-items: center ;
+}
+
+.contact_way i{
+    font-size: 3rem;
+}
+
+.contact_way h3{
+    font-size: 3rem;
+    font: bold;
+}
+
+
+.bottom_contact
+{
+     max-width: 400px;
+     display: grid;
+     grid-template-columns: repeat(auto-fit , minmax(80px,1fr));
+     margin: 0 auto;
+     gap: 2rem;
+}
+
+
+footer{
+    background-color: var(--darker_color);
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.6rem;
+}
+
+
+@media (max-width:786px){
+    html    {
+        font-size: 40%;
+    }
+
+    #hero .container{
+        flex-direction: column;
+    }
+
+    .hero_image
+    {
+        display: grid;
+        place-items: center;
+    }
+    #contact .container
+    {
+        height: 70vh;
+    }
+    
+}
+
+
+@media (max-width:500px){
+    html    {
+        font-size: 32%;
+    }
+
+    #hero .container{
+        flex-direction: column;
+    }
+
+    .hero_image
+    {
+        display: grid;
+        place-items: center;
+    }
+    #contact .container
+    {
+        height: 50vh;
+    }
+}
